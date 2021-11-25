@@ -30,11 +30,9 @@
     "@react-navigation/material-top-tabs": "^5.2.16",
     "@react-navigation/material-bottom-tabs": "^5.2.16",
     "axios": "*",
-    "firebase": "8.9.1",
     "react-native-vector-icons": "*",
     "@react-native-picker/picker": "*",
-    "react-native-picker-select": "*",
-    "react-native-maps": "*"
+    "react-native-picker-select": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"

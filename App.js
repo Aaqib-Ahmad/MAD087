@@ -19,6 +19,20 @@ import Page_Login_As_Employee from "./pages/Page_Login_As_Employee/Page_Login_As
 import Page_Login_As_Admin from "./pages/Page_Login_As_Admin/Page_Login_As_Admin.js";
 import Page_Admin_Home_Page from "./pages/Page_Admin_Home_Page/Page_Admin_Home_Page.js";
 const Tab = createBottomTabNavigator();
+const Page_Login_As_AdminStackNavigator = createStackNavigator();
+const ScreenForPage_Login_As_Admin = () => {
+	return (
+		<Page_Login_As_AdminStackNavigator.Navigator>
+			<Page_Login_As_AdminStackNavigator.Screen
+				name = "Page_Login_As_Admin"
+				component = {Page_Login_As_Admin}
+				options = {{
+					headerShown: false
+				}}
+			/>
+		</Page_Login_As_AdminStackNavigator.Navigator>
+	)
+};
 const Page_first_pageStackNavigator = createStackNavigator();
 const ScreenForPage_first_page = () => {
 	return (
@@ -89,20 +103,6 @@ const ScreenForPage_Login_As_Employee = () => {
 		</Page_Login_As_EmployeeStackNavigator.Navigator>
 	)
 };
-const Page_Login_As_AdminStackNavigator = createStackNavigator();
-const ScreenForPage_Login_As_Admin = () => {
-	return (
-		<Page_Login_As_AdminStackNavigator.Navigator>
-			<Page_Login_As_AdminStackNavigator.Screen
-				name = "Page_Login_As_Admin"
-				component = {Page_Login_As_Admin}
-				options = {{
-					headerShown: false
-				}}
-			/>
-		</Page_Login_As_AdminStackNavigator.Navigator>
-	)
-};
 const Page_Admin_Home_PageStackNavigator = createStackNavigator();
 const ScreenForPage_Admin_Home_Page = () => {
 	return (
@@ -145,6 +145,10 @@ const Stack = createStackNavigator();
 							iconStyle: {width: "100%", height: "100%"},
 						}}>
 						<Tab.Screen
+							name = "Page_Login_As_Admin"
+							component = {ScreenForPage_Login_As_Admin}
+							options = {{tabBarVisible: false}}						/> 
+						<Tab.Screen
 							name = "Page_first_page"
 							component = {ScreenForPage_first_page}
 							options = {{tabBarVisible: false}}						/> 
@@ -164,10 +168,7 @@ const Stack = createStackNavigator();
 							name = "Page_Login_As_Employee"
 							component = {ScreenForPage_Login_As_Employee}
 							options = {{tabBarVisible: false}}						/> 
-						<Tab.Screen
-							name = "Page_Login_As_Admin"
-							component = {ScreenForPage_Login_As_Admin}
-							options = {{tabBarVisible: false}}						/> 
+						
 						<Tab.Screen
 							name = "Page_Admin_Home_Page"
 							component = {ScreenForPage_Admin_Home_Page}
